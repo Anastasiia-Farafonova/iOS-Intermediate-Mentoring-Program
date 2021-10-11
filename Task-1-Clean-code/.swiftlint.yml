@@ -1,8 +1,5 @@
 included:
-  - Source
-  - Tests
-excluded:
-  - Tests/SwiftLintFrameworkTests/Resources
+  - Task-1-Clean-code
 analyzer_rules:
   - unused_declaration
   - unused_import
@@ -90,23 +87,22 @@ file_name:
     - AutomaticRuleTests.generated.swift
 
 custom_rules:
-  rule_id:
-    included: Source/SwiftLintFramework/Rules/.+/\w+\.swift
-    name: Rule ID
-    message: Rule IDs must be all lowercase, snake case and not end with `rule`
-    regex: identifier:\s*("\w+_rule"|"\S*[^a-z_]\S*")
-    severity: error
-  fatal_error:
-    name: Fatal Error
-    excluded: "Tests/*"
-    message: Prefer using `queuedFatalError` over `fatalError` to avoid leaking compiler host machine paths.
-    regex: \bfatalError\b
-    match_kinds:
-      - identifier
-    severity: error
-  rule_test_function:
-    included: Tests/SwiftLintFrameworkTests/RulesTests.swift
-    name: Rule Test Function
-    message: Rule Test Function mustn't end with `rule`
-    regex: func\s*test\w+(r|R)ule\(\)
-    severity: error
+  print_using:
+    name: "Print using"
+    regex: "print"
+    message: "Print decrease performance of the app"
+    severity: warning
+
+  already_true:
+    name: "Already true"
+    regex: "== true"
+    message: "Don't compare to true, just use the bool value."
+    severity: warning
+
+  already_false:
+    name: "Already false"
+    regex: "== false"
+    message: "Don't compare to false, just use !value."
+    severity: warning
+
+
