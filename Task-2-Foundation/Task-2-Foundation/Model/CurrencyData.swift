@@ -7,10 +7,6 @@
 
 import Foundation
 
-struct CurrencyListData: Codable {
-    let currencyList: [CurrencyData]
-}
-
 struct CurrencyData: Codable {
     let name: String
     let date: Date

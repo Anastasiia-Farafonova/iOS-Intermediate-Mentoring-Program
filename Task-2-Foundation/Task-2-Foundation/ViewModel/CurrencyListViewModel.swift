@@ -7,21 +7,26 @@
 
 import Foundation
 
+protocol CurrencyListViewModelDelegate: AnyObject {
+    func viewModel(_ viewModel: CurrencyListViewModel, didReceiveData data: [CurrencyData])
+}
+
 class CurrencyListViewModel: CurrencyListViewModelProtocol {
+    weak var delegate: CurrencyListViewModelDelegate?
     let model: CurrencyModelProtocol
-    var listData: CurrencyListData?
     
     init(model: CurrencyModelProtocol) {
         self.model = model
-        getCurrencyLint()
     }
     
-    func getCurrencyLint() {
-        model.getCurrencyLint(for: TimeInterval()) { [weak self] currencyList, error in
-            if let currencyList = currencyList {
-                self?.listData = currencyList
-            } else if let error = error {
-                self?.handleError(error)
+    func loadListData() {
+        model.getCurrencyLint(for: TimeInterval()) { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case .success(let currencyList):
+                self.delegate?.viewModel(self, didReceiveData: currencyList)
+            case .failure(let error):
+                self.handleError(error)
             }
         }
     }

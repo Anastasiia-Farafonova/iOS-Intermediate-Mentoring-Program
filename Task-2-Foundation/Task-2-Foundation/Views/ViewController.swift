@@ -20,8 +20,13 @@ class ViewController: UIViewController {
         // Creation of view model must be on coordinators. It is here just for example
         
         viewModel = CurrencyListViewModel(model: model)
-        if let currencyList = viewModel?.listData {
-            print(currencyList)
-        }
+        viewModel?.delegate = self
+        viewModel?.loadListData()
+    }
+}
+
+extension ViewController: CurrencyListViewModelDelegate {
+    func viewModel(_ viewModel: CurrencyListViewModel, didReceiveData data: [CurrencyData]) {
+        print(data)
     }
 }

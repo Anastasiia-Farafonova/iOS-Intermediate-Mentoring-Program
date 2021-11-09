@@ -7,12 +7,14 @@
 
 import Foundation
 
-class CurrencyDataProvider: CurrencyDataProviderProtocol {
-    var currencyListData: CurrencyListData = CurrencyListData(currencyList: [CurrencyData(name: "Name", date: Date(), price: 123.45)])
-        
-    func getCurrencyList(for interval: TimeInterval, completion: @escaping (CurrencyListData?, Error?) -> Void) {
+typealias CurrencyDataResult = Result<[CurrencyData], Error>
+
+class CurrencyDataProvider: CurrencyDataProviding {
+    var currencyListData: [CurrencyData] = [CurrencyData(name: "Name", date: Date(), price: 123.45)]
+
+    func getCurrencyList(for interval: TimeInterval, completion: @escaping (CurrencyDataResult) -> Void) {
         // Here we can make requests
-        completion(currencyListData, nil)
+        completion(.success(currencyListData))
         return
     }
 }

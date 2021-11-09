@@ -11,11 +11,11 @@ import Foundation
 // We need serviceLayer to use an object that knows how to get hold of all of the dataProviders to avoid dependencies in the whole project
 
 class ServiceLayer {
-    var currencyDataProvider: CurrencyDataProviderProtocol
+    var currencyDataProvider: CurrencyDataProviding
     
-    init(currencyDataProvider: CurrencyDataProviderProtocol) {
+    init(currencyDataProvider: CurrencyDataProviding) {
         self.currencyDataProvider = currencyDataProvider
     }
 }
 
-extension ServiceLayer: CurrencyDataProviderHolderProtocol {}
+extension ServiceLayer: CurrencyDataProviderHolding {}

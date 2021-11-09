@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol CurrencyDataProviderHolderProtocol: AnyObject {
-    var currencyDataProvider: CurrencyDataProviderProtocol { get }
+protocol CurrencyDataProviderHolding: AnyObject {
+    var currencyDataProvider: CurrencyDataProviding { get }
 }

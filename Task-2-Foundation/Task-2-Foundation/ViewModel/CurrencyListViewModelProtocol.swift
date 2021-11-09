@@ -7,10 +7,10 @@
 
 import Foundation
 
-protocol CurrencyListViewModelProtocol {
-    var listData: CurrencyListData? { get set }
+protocol CurrencyListViewModelProtocol {    
+    var delegate: CurrencyListViewModelDelegate? { get set }
     
-    func handleError(_ error: Error)
+    func loadListData()
 }
 
 extension CurrencyListViewModelProtocol {
