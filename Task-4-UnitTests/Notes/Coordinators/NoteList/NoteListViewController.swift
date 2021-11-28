@@ -12,17 +12,20 @@ class NoteListViewController: UITableViewController {
     
     @IBOutlet weak var sortButton: UIBarButtonItem!
     @IBOutlet weak var notesCountLabel: UIBarButtonItem!
+    @IBOutlet weak var createNoteButton: UIBarButtonItem!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         viewModel.dataSource.delegate = self
-        
+        tableView.accessibilityIdentifier = "notes_list"
         tableView.estimatedRowHeight = 80
         tableView.rowHeight = UITableView.automaticDimension
         
         tableView.register(UINib(nibName: NoteViewCell.nibName(), bundle: nil),
                            forCellReuseIdentifier: NoteViewCell.nibName())
+        
+        createNoteButton.accessibilityIdentifier = "create_note"
         createSortMenu()
         updateToolBar()
     }

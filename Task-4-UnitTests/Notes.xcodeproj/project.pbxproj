@@ -15,6 +15,7 @@
 		BC2562AF2753EAC800FFBB47 /* NoteListCoordinatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC2562AE2753EAC800FFBB47 /* NoteListCoordinatorTest.swift */; };
 		BC2562B12753EE7D00FFBB47 /* NoteDetailsCoordinatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC2562B02753EE7D00FFBB47 /* NoteDetailsCoordinatorTest.swift */; };
 		BC2562B32753EFF400FFBB47 /* RouterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC2562B22753EFF400FFBB47 /* RouterTest.swift */; };
+		BC2562BC2754174500FFBB47 /* NotesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC2562BB2754174500FFBB47 /* NotesUITests.swift */; };
 		BCAE7311274193ED0031F2F1 /* FolderListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAE7310274193ED0031F2F1 /* FolderListViewModelTests.swift */; };
 		BCAE73192741953D0031F2F1 /* ObjectId.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAE73182741953D0031F2F1 /* ObjectId.swift */; };
 		BCAE731B274196C50031F2F1 /* FolderListCoordinatorMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAE731A274196C50031F2F1 /* FolderListCoordinatorMock.swift */; };
@@ -59,6 +60,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		BC2562BF2754174500FFBB47 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F9ACD7152625F97500D85000 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F9ACD71C2625F97500D85000;
+			remoteInfo = Notes;
+		};
 		BCAE7313274193ED0031F2F1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = F9ACD7152625F97500D85000 /* Project object */;
@@ -77,6 +85,8 @@
 		BC2562AE2753EAC800FFBB47 /* NoteListCoordinatorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteListCoordinatorTest.swift; sourceTree = "<group>"; };
 		BC2562B02753EE7D00FFBB47 /* NoteDetailsCoordinatorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteDetailsCoordinatorTest.swift; sourceTree = "<group>"; };
 		BC2562B22753EFF400FFBB47 /* RouterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterTest.swift; sourceTree = "<group>"; };
+		BC2562B92754174500FFBB47 /* NotesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NotesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC2562BB2754174500FFBB47 /* NotesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesUITests.swift; sourceTree = "<group>"; };
 		BCAE730E274193ED0031F2F1 /* NotesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NotesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCAE7310274193ED0031F2F1 /* FolderListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderListViewModelTests.swift; sourceTree = "<group>"; };
 		BCAE7312274193ED0031F2F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -125,6 +135,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		BC2562B62754174500FFBB47 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BCAE730B274193ED0031F2F1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -237,6 +254,14 @@
 			path = Router;
 			sourceTree = "<group>";
 		};
+		BC2562BA2754174500FFBB47 /* NotesUITests */ = {
+			isa = PBXGroup;
+			children = (
+				BC2562BB2754174500FFBB47 /* NotesUITests.swift */,
+			);
+			path = NotesUITests;
+			sourceTree = "<group>";
+		};
 		BCAE730F274193ED0031F2F1 /* NotesTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -273,6 +298,7 @@
 			children = (
 				F9ACD71F2625F97500D85000 /* Notes */,
 				BCAE730F274193ED0031F2F1 /* NotesTests */,
+				BC2562BA2754174500FFBB47 /* NotesUITests */,
 				F9ACD71E2625F97500D85000 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -282,6 +308,7 @@
 			children = (
 				F9ACD71D2625F97500D85000 /* Notes.app */,
 				BCAE730E274193ED0031F2F1 /* NotesTests.xctest */,
+				BC2562B92754174500FFBB47 /* NotesUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -348,6 +375,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		BC2562B82754174500FFBB47 /* NotesUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BC2562C32754174500FFBB47 /* Build configuration list for PBXNativeTarget "NotesUITests" */;
+			buildPhases = (
+				BC2562B52754174500FFBB47 /* Sources */,
+				BC2562B62754174500FFBB47 /* Frameworks */,
+				BC2562B72754174500FFBB47 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BC2562C02754174500FFBB47 /* PBXTargetDependency */,
+			);
+			name = NotesUITests;
+			productName = NotesUITests;
+			productReference = BC2562B92754174500FFBB47 /* NotesUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		BCAE730D274193ED0031F2F1 /* NotesTests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = BCAE7317274193ED0031F2F1 /* Build configuration list for PBXNativeTarget "NotesTests" */;
@@ -389,9 +434,13 @@
 		F9ACD7152625F97500D85000 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1250;
+				LastSwiftUpdateCheck = 1310;
 				LastUpgradeCheck = 1240;
 				TargetAttributes = {
+					BC2562B82754174500FFBB47 = {
+						CreatedOnToolsVersion = 13.1;
+						TestTargetID = F9ACD71C2625F97500D85000;
+					};
 					BCAE730D274193ED0031F2F1 = {
 						CreatedOnToolsVersion = 12.5;
 						TestTargetID = F9ACD71C2625F97500D85000;
@@ -416,11 +465,19 @@
 			targets = (
 				F9ACD71C2625F97500D85000 /* Notes */,
 				BCAE730D274193ED0031F2F1 /* NotesTests */,
+				BC2562B82754174500FFBB47 /* NotesUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		BC2562B72754174500FFBB47 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BCAE730C274193ED0031F2F1 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -443,6 +500,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		BC2562B52754174500FFBB47 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BC2562BC2754174500FFBB47 /* NotesUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BCAE730A274193ED0031F2F1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -504,6 +569,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		BC2562C02754174500FFBB47 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F9ACD71C2625F97500D85000 /* Notes */;
+			targetProxy = BC2562BF2754174500FFBB47 /* PBXContainerItemProxy */;
+		};
 		BCAE7314274193ED0031F2F1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = F9ACD71C2625F97500D85000 /* Notes */;
@@ -531,6 +601,52 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		BC2562C12754174500FFBB47 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "anastasiia-farafonova.NotesUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Notes;
+			};
+			name = Debug;
+		};
+		BC2562C22754174500FFBB47 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "anastasiia-farafonova.NotesUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Notes;
+			};
+			name = Release;
+		};
 		BCAE7315274193ED0031F2F1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -728,6 +844,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		BC2562C32754174500FFBB47 /* Build configuration list for PBXNativeTarget "NotesUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BC2562C12754174500FFBB47 /* Debug */,
+				BC2562C22754174500FFBB47 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		BCAE7317274193ED0031F2F1 /* Build configuration list for PBXNativeTarget "NotesTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

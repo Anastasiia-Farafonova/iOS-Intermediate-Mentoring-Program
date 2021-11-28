@@ -55,6 +55,16 @@
                ReferencedContainer = "container:Notes.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "BC2562B82754174500FFBB47"
+               BuildableName = "NotesUITests.xctest"
+               BlueprintName = "NotesUITests"
+               ReferencedContainer = "container:Notes.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
