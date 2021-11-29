@@ -17,6 +17,9 @@ class NoteDetailsViewController: UIViewController {
         super.viewWillAppear(animated)
         
         navigationController?.setToolbarHidden(true, animated: true)
+        navigationController?.navigationBar.backItem
+        navigationController?.navigationBar.backItem?.accessibilityLabel = "navigate_back_button"
+        noteTextView.accessibilityIdentifier = "note_text_view"
         
         dateLabel.text = viewModel.creationDateTitle
         noteTextView.text = viewModel.body
