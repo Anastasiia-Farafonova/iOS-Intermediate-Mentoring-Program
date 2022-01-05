@@ -28,8 +28,8 @@ class AvatarComponentView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        addSubviewAndDisableAutoresizingMask(nameLabel)
-        addSubviewAndDisableAutoresizingMask(imageView)
+        addAutolayoutSubview(nameLabel)
+        addAutolayoutSubview(imageView)
         
         setupAutolayout()
     }

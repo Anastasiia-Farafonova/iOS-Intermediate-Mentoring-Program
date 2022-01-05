@@ -86,9 +86,9 @@ class ConversationCell: UITableViewCell {
     }
     
     private func setupAutolayout() {
-        contentView.addSubviewAndDisableAutoresizingMask(avatarComponent)
-        contentView.addSubviewAndDisableAutoresizingMask(containerStackView)
-        readIndicatorView.addSubviewAndDisableAutoresizingMask(readIndicatorLabel)
+        contentView.addAutolayoutSubview(avatarComponent)
+        contentView.addAutolayoutSubview(containerStackView)
+        readIndicatorView.addAutolayoutSubview(readIndicatorLabel)
 
         messageNameStackView.axis = .vertical
         messageNameStackView.distribution = .fillProportionally
