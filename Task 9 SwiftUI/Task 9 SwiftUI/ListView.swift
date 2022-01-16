@@ -16,12 +16,12 @@ struct ListView: View {
                 Section {
                     ForEach(section) { item in
                         Button {
-                            self.moveToNextSection(item: item, section: section)
+                            self.moveToNextSection(item: item)
                         } label: {
                             PizzaRowView(item: .init(get: {
                                 item
                             }, set: { newItem in
-                                listViewModel.replace(item, with: newItem, in: section)
+                                listViewModel.replace(item, with: newItem)
                             }))
                         }
                     }
@@ -30,8 +30,8 @@ struct ListView: View {
         }
     }
     
-    private func moveToNextSection(item: PizzaItem, section: [PizzaItem]) {
-        listViewModel.moveItem(item, from: section)
+    private func moveToNextSection(item: PizzaItem) {
+        listViewModel.moveItem(item)
     }
 }
 

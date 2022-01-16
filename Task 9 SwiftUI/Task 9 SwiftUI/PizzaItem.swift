@@ -13,4 +13,5 @@ struct PizzaItem: Identifiable, Hashable {
     var name: String
     var price: Int
     var image: String
+    var indexPath: IndexPath
 }

@@ -19,36 +19,32 @@ class ListViewModel: ObservableObject {
         self.model
             .$sections
             .map { sections in
-                let localItems = Set(self.list.flatMap { $0 })
-    
-                let newSections = sections.map { section in
-                    return section.map { sectionItem in
-                        localItems.first { $0.id == sectionItem.id } ?? sectionItem
-                    }
-                }
-                
-                return newSections
+                sections.map { $0.map { self.setCorrectNameAndOrder($0) } }
             }
             .assign(to: \.list, on: self)
             .store(in: &cancellables)
     }
     
-    func moveItem(_ item: PizzaItem, from section: [PizzaItem]) {
-        guard let sectionIndex = list.firstIndex(of: section) else { return }
-        
-        let nextSection = sectionIndex + 1
+    func moveItem(_ item: PizzaItem) {
+        let nextSection = item.indexPath.section + 1
         
         if model.sections.count <= nextSection {
-            model.moveItem(item, sectionIndex: sectionIndex, to: 0)
+            model.moveItem(item, to: 0)
         } else {
-            model.moveItem(item, sectionIndex: sectionIndex, to: nextSection)
+            model.moveItem(item, to: nextSection)
         }
     }
     
-    func replace(_ item: PizzaItem, with newItem: PizzaItem, in section: [PizzaItem]) {
-        guard let sectionIndex = list.firstIndex(of: section),
-                let itemIndex = list[sectionIndex].firstIndex(of: item) else { return }
+    func replace(_ item: PizzaItem, with newItem: PizzaItem) {
+        list[item.indexPath.section][item.indexPath.row] = newItem
+    }
+    
+    private func setCorrectNameAndOrder(_ newItem: PizzaItem) -> PizzaItem {
+        let localItems = Set(self.list.flatMap { $0 })
+
+        var localItem = localItems.first { $0.id == newItem.id } ?? newItem
+        localItem.indexPath = newItem.indexPath
         
-        list[sectionIndex][itemIndex] = newItem
+        return localItem
     }
 }

@@ -39,6 +39,6 @@ struct PizzaRowView: View {
 
 struct PizzaRowView_Previews: PreviewProvider {
     static var previews: some View {
-        PizzaRowView(item: .constant(PizzaItem(id: 1, name: "Pizza #1", price: 1, image: "2")))
+        PizzaRowView(item: .constant(PizzaItem(id: 1, name: "Pizza #1", price: 1, image: "2", indexPath: IndexPath(row: 1, section: 1))))
     }
 }
