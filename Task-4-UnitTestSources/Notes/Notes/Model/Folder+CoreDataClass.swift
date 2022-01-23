@@ -17,17 +17,19 @@ enum SortCondition: String {
     case creationDate
 }
 
+typealias folderCreationCompletion = (NSManagedObjectID?, Error?) -> Void
+
 @objc(Folder)
 public class Folder: NSManagedObject {
         
-    static func create(name: String, creationDate: Date, completion: @escaping (Error?) -> Void) {
+    static func create(name: String, creationDate: Date, completion: @escaping folderCreationCompletion = { _, _ in }) {
         Database.shared.persistentContainer.performBackgroundTask { context in
             let fetchRequest: NSFetchRequest<Folder> = Folder.fetchRequest()
             fetchRequest.predicate = NSPredicate(format: "name == %@", name)
             fetchRequest.fetchLimit = 1
 
             if let result = try? context.fetch(fetchRequest), !result.isEmpty {
-                completion(FolderError.existingFolder)
+                completion(nil, FolderError.existingFolder)
                 
                 return
             }
@@ -39,7 +41,7 @@ public class Folder: NSManagedObject {
             try? context.save()
 
             DispatchQueue.main.async {
-                completion(nil)
+                completion(folder.objectID, nil)
             }
         }
     }
