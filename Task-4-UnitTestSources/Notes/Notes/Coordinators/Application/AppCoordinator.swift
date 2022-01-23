@@ -5,6 +5,7 @@
 //
 
 import UIKit
+import CoreData
 
 protocol Coordinator {
     func start()
@@ -12,12 +13,17 @@ protocol Coordinator {
 
 class AppCoordinator: Coordinator {
     private let router: Router
+    private lazy var folderListCoordinator = FolderListCoordinator(router: router)
     
     init(router: Router) {
         self.router = router
     }
     
     func start() {
-        FolderListCoordinator(router: router).start()
+        folderListCoordinator.start()
+    }
+    
+    func showNote(id: NSManagedObjectID?) {
+        folderListCoordinator.showNote(id: id)
     }
 }

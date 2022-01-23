@@ -39,6 +39,21 @@ public class Note: NSManagedObject {
         return frc
     }
     
+    static func getLastCreatedNote() -> Note? {
+        let fetchRequest: NSFetchRequest<Note> = Note.fetchRequest()
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: SortCondition.creationDate.rawValue, ascending: true)]
+        
+        let notes = try? Database.shared.viewContext.fetch(fetchRequest) as [Note]
+        return notes?.last
+    }
+    
+    static func getRandomNote() -> Note? {
+        let fetchRequest: NSFetchRequest<Note> = Note.fetchRequest()
+        
+        let notes = try? Database.shared.viewContext.fetch(fetchRequest) as [Note]
+        return notes?.randomElement()
+    }
+    
     func update(name: String, body: String) {
         Database.shared.persistentContainer.performBackgroundTask { context in
             guard let note = context.object(with: self.objectID) as? Note else { return }

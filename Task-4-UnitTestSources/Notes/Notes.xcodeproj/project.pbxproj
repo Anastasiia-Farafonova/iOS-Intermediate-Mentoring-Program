@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BC05F450279DE03200B6AC53 /* NotificationFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC05F44F279DE03200B6AC53 /* NotificationFactory.swift */; };
+		BC7ACF53279D6EC900AE9D37 /* NotificationCenterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7ACF52279D6EC900AE9D37 /* NotificationCenterDelegate.swift */; };
 		F9311C7E26270EC600D9F82D /* FolderListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9311C7D26270EC600D9F82D /* FolderListViewModel.swift */; };
 		F9311C8226271A2900D9F82D /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9311C8126271A2900D9F82D /* Database.swift */; };
 		F96A80592628722600008BC9 /* FolderListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96A80582628722600008BC9 /* FolderListCoordinator.swift */; };
@@ -37,6 +39,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BC05F44F279DE03200B6AC53 /* NotificationFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationFactory.swift; sourceTree = "<group>"; };
+		BC7ACF52279D6EC900AE9D37 /* NotificationCenterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCenterDelegate.swift; sourceTree = "<group>"; };
 		F9311C7D26270EC600D9F82D /* FolderListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderListViewModel.swift; sourceTree = "<group>"; };
 		F9311C8126271A2900D9F82D /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
 		F96A80582628722600008BC9 /* FolderListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderListCoordinator.swift; sourceTree = "<group>"; };
@@ -158,6 +162,8 @@
 			children = (
 				F9ACD7202625F97500D85000 /* AppDelegate.swift */,
 				F9ACD7222625F97500D85000 /* SceneDelegate.swift */,
+				BC7ACF52279D6EC900AE9D37 /* NotificationCenterDelegate.swift */,
+				BC05F44F279DE03200B6AC53 /* NotificationFactory.swift */,
 				F9B96B9E262CA41B0042FE5B /* Model */,
 				F9B96B9C262CA4130042FE5B /* Router */,
 				F9B96B5F262886260042FE5B /* Coordinators */,
@@ -293,8 +299,10 @@
 				F9F91E252626EF6D00429C64 /* NoteDetailsViewController.swift in Sources */,
 				F9ACD73F2625F9E500D85000 /* FolderViewCell.swift in Sources */,
 				F9311C7E26270EC600D9F82D /* FolderListViewModel.swift in Sources */,
+				BC05F450279DE03200B6AC53 /* NotificationFactory.swift in Sources */,
 				F9F91E222626EA1700429C64 /* NoteListViewController.swift in Sources */,
 				F9ACD7492626018E00D85000 /* NoteViewCell.swift in Sources */,
+				BC7ACF53279D6EC900AE9D37 /* NotificationCenterDelegate.swift in Sources */,
 				F9F91E2F2626F4AA00429C64 /* Note+CoreDataProperties.swift in Sources */,
 				F9B1CBED26286C3B0087FBB3 /* AppCoordinator.swift in Sources */,
 				F9B96B6C262989FC0042FE5B /* NoteDetailsViewModel.swift in Sources */,

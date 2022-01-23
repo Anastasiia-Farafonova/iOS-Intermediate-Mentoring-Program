@@ -22,7 +22,7 @@ class FolderListViewModel {
     func createFolder(name: String) {
         guard !name.isEmpty else { return }
         
-        Folder.create(name: name, creationDate: Date(), completion: { _ in })
+        Folder.create(name: name, creationDate: Date())
     }
     
     func delete(folder: Folder) {
